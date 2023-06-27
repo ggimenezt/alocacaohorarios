@@ -16,7 +16,6 @@ Classe principal - desenvolvido em Python 3.11.4
 import sys
 from Inicializacao import (dataSet as ds)
 from Metodos import (coloracao as cl)
-from skopt import Optimizer
 
 def main(instancia):
     # chama a função para ler arquivo e retorna a matriz numpy
