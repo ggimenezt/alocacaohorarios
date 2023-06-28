@@ -16,13 +16,16 @@ Classe principal - desenvolvido em Python 3.11.4
 import sys
 from Inicializacao import (dataSet as ds)
 from Metodos import (coloracao as cl)
+import timeit
+import time
 
 def main(instancia):
+    start = timeit.default_timer()
     # chama a função para ler arquivo e retorna a matriz numpy
-    grafo = ds.extraiGrafo(instancia)
+    grafo, infos = ds.extraiGrafo(instancia)
     mapColor = cl.colore_grafo(grafo)
-
-    print(mapColor)
-
+    ds.salvaResultados(mapColor=mapColor, infos=infos)
+    end = timeit.default_timer()
+    print(f"Tempo de execução: {end - start}s")
 if __name__ == '__main__':
     main(str(sys.argv[1]))
