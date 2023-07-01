@@ -1,23 +1,25 @@
 import pandas as pd
 import numpy as np
-from operator import itemgetter
 
-
+# Função que le o arquivo de entrada
 def leArquivo(instancia):
-    caminho = 'Instancias/' + instancia + '.xlsx'
+    # salva o caminho do arquivo de entrada na variável caminho
+    caminho = 'Instancias/' + instancia + '.csv'
 
-    # Carregar o arquivo Excel usando pandas
-    data = pd.read_excel(caminho, sheet_name='Planilha1')
+    # le o arquivo de entrada com a biblioteca pandas e armazena as informações na variável data
+    data = pd.read_csv(caminho, delimiter=',')
 
     return data
 
-
+# Função que gera o gráfico a partir das informações da plailha
 def extraiGrafo(instancia):
     data = leArquivo(instancia)
+    # armazena a quantidade de materias presentes na planilha
     tam = len(data)
 
     infos = []
 
+    # loop para caso a carga horária ser maior que 3, separar a matéria em dois blocos ".1 e .2"
     for i in range(tam):
         if data["CH"][i] <= 3:
             infos.append([data["MATÉRIAS"][i], data["TURMAS"][i],
@@ -28,11 +30,12 @@ def extraiGrafo(instancia):
             infos.append([data["MATÉRIAS"][i]+'.2', data["TURMAS"]
                          [i], data["PROFESSORES"][i], data["CH"][i]-2])
 
+    # atualiza o tamanho após as matérias setem separadas em blocos
     infos = np.array(infos)
     tam = len(infos)
 
+    # cria o grafo e caso as matérias possuam turma ou professores iguais, une os vértices com uma aresta
     grafo = np.zeros((tam, tam))
-
     for i in range(tam):
         for j in range(tam-i-1):
             if infos[i][1] == infos[j+i+1][1] or infos[i][2] == infos[j+i+1][2]:
@@ -41,59 +44,16 @@ def extraiGrafo(instancia):
 
     return grafo, infos
 
-
-def geraHorario(dados):
-    dict_ch = {}
+# Função que gera os horários reais pós a locação
+def geraHorarios(dados, dict_h):
+    # cria um array para guardar cor e carga horária
     cor_ch = dados[:, 1:3]
 
-    for cor, hora in dados[:, 1:3]:
-        if cor not in dict_ch:
-            dict_ch[cor] = []
-        dict_ch[cor].append(hora)
-
-    dict_h = {}
-    for i in range(len(dict_ch.keys())):
-        dict_h[i] = ''
-
-    for i, cor in enumerate(dict_ch):
-        dia = 2
-        hora = 2
-        if '3' in dict_ch[cor]:
-            while (dict_h[i] == ''):
-                if str(hora)+str(dia) not in dict_h.values():
-                    dict_h[i] = (str(hora)+str(dia))
-                else:
-                    if hora == 2:
-                        hora = hora + 6
-                    else:
-                        if hora+5 > 13:
-                            dia = dia + 1
-                            hora = 2
-                        else:
-                            hora = hora + 5
-        else:
-            while (dict_h[i] == ''):
-                if str(hora)+str(dia) not in dict_h.values():
-                    dict_h[i] = (str(hora)+str(dia))
-                else:
-                    if hora == 8:
-                        hora = hora + 3
-                    else:
-                        if hora+2 > 13:
-                            dia = dia + 1
-                            hora = 2
-                        else:
-                            hora = hora + 2
-
-    for i in range(len(dict_h)):
-        if int(dict_h[i]) < 100:
-            dict_h[i] = '0'+dict_h[i]
-
+    # loop que verifica em qual periodo o horário foi alocado e coloca no horário ideal dependendo se forem
+    # 2 ou 3 aulas
     horario = []
     for i in range(len(dados)):
         hora = dict_h[int(cor_ch[i][0])][:-1]
-        if hora[0] == '0':
-            hora = hora[1:]
         dia = dict_h[int(cor_ch[i][0])][-1]
         if int(cor_ch[i][1]) == 3:
 
@@ -112,37 +72,90 @@ def geraHorario(dados):
                 horario.append(dia+'T'+str(int(hora)-5)+str(int(hora)-4))
             else:
                 horario.append(dia+'N'+str(int(hora)-10)+str(int(hora)-9))
+    
+    return horario
+
+# Função que aloca os horários sequencialmente, começando segunda de manhã, depois de tarde e assim segue
+def alocacaoSequencial(dados):
+    dict_ch = {}
+
+    # cria um dicionário para armazenar as cargas horárias das matérias presentes em cada cor
+    # chave = cor, valores = cargas das matérias
+    for cor, hora in dados[:, 1:3]:
+        if cor not in dict_ch:
+            dict_ch[cor] = []
+        dict_ch[cor].append(hora)
+
+    # cria dicionário vazio para armazenar horários das cores
+    # chave = cor, valores = horário
+    dict_h = {}
+    for i in range(len(dict_ch)):
+        dict_h[i] = ''
+
+    # loop que verifica qual horário está disponível, se o horário não estiver vai pro próximo horário ou dia
+    # encontrando um horário disponível associa o horário a cor
+    for _, cor in enumerate(dict_ch):
+        dia = 2
+        hora = 2
+        if '3' in dict_ch[cor]:
+            while (dict_h[int(cor)] == ''):
+                if str(hora)+str(dia) not in dict_h.values():
+                    dict_h[int(cor)] = (str(hora)+str(dia))
+                else:
+                    if hora == 2:
+                        hora = hora + 6
+                    else:
+                        if hora+5 > 13:
+                            dia = dia + 1
+                            hora = 2
+                        else:
+                            hora = hora + 5
+        else:
+            while (dict_h[int(cor)] == ''):
+                if str(hora)+str(dia) not in dict_h.values():
+                    dict_h[int(cor)] = (str(hora)+str(dia))
+                else:
+                    if hora == 8:
+                        hora = hora + 3
+                    else:
+                        if hora+2 > 13:
+                            dia = dia + 1
+                            hora = 2
+                        else:
+                            hora = hora + 2
+
+    # chama função para gerar os horários reais baseado na alocação
+    horario = geraHorarios(dados, dict_h)
 
     return horario
 
-
+# Função que salva os resultados numa planilha para melhor visualização
 def salvaResultados(mapColor, infos):
+    # cria um array de materias e outro de carga horária
     materias = infos[:, 0].reshape(-1, 1)
     ch = infos[:, 3].reshape(-1, 1)
-    cores = np.array(list(mapColor.values()))
+
+    # cria um array com as cores das matérias
+    cores = []
+    for i in range(len(mapColor)):
+        cores.append(mapColor[i])
+    cores = np.array(cores)
+
+    # junta todos esses arrays em um só
     dados = np.column_stack([materias, cores.reshape(-1, 1), ch])
 
-    horarios = np.array(geraHorario(dados))
+    # chama a função para retornar um array com os horários das cores
+    horarios = np.array(alocacaoSequencial(dados))
 
+    # junta o array de "matérias, cores, ch" com o de horários
     dados = np.column_stack([dados, horarios.reshape(-1, 1)])
 
-    dados_ordenados = np.array(sorted(dados, key=itemgetter(1)))
-
+    # cria os labels para indentificar as colunas no arquivo csv
     header = np.array(
         [['MATÉRIAS'], ['CORES'], ['CARGA HORÁRIA'], ['SUGESTÃO']])
-
-    dados_ordenados = np.row_stack(
-        [header.reshape(-1, 4), dados_ordenados.reshape(-1, 4)])
     dados = np.row_stack([header.reshape(-1, 4), dados.reshape(-1, 4)])
 
-    blank_column = []
-    for _ in range(len(dados)):
-        blank_column.append('                ')
-    blank_column = np.array(blank_column)
-
-    dados = np.column_stack(
-        [dados_ordenados, blank_column.reshape(87, -1), dados])
-
+    # gera um arquivo csv com os horários de cada matéria
     np.savetxt('Resultados/dados.csv', dados, delimiter=",", fmt='%s')
 
     return 0
