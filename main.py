@@ -17,10 +17,8 @@ import sys
 from Inicializacao import (dataSet as ds)
 from Metodos import (coloracao as cl)
 from Metodos import (horarios as hr)
-import time
 
 def main(instancia):
-    inicio = time.time()
     grafo, aulas = ds.extraiGrafo(instancia)
     mapaDeCores = cl.colore_grafo(grafo) 
     aulas = ds.atribuiCores(mapaDeCores, aulas)
@@ -33,9 +31,6 @@ def main(instancia):
 
     horariosPorTurno = hr.alocaPorTurno(aulas)
     ds.geraPlanilhas(aulas, horariosPorTurno, "Dedicado")
-
-    fim = time.time()
-    print(fim - inicio)
 
 if __name__ == '__main__':
     main(str(sys.argv[1]))
