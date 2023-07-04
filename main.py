@@ -16,15 +16,22 @@ Classe principal - desenvolvido em Python 3.10.11
 import sys
 from Inicializacao import (dataSet as ds)
 from Metodos import (coloracao as cl)
+from Metodos import (horarios as hr)
 
 def main(instancia):
 
-    # chama a função para ler arquivo e retorna a matriz numpy
-    grafo, infos = ds.extraiGrafo(instancia)
-    # chama a função para colorir o grafo e a armazena o mapColor
-    mapColor = cl.colore_grafo(grafo)
-    # chama a função para salvar os dados em uma planilha de saída
-    ds.salvaResultados(mapColor=mapColor, infos=infos)
+    grafo, aulas = ds.extraiGrafo(instancia)
+    mapaDeCores = cl.colore_grafo(grafo) 
+    aulas = ds.atribuiCores(mapaDeCores, aulas)
+
+    horariosSequenciais = hr.alocaSequencial(aulas)
+    ds.geraPlanilhas(aulas, horariosSequenciais, "Sequencial")
+
+    horariosAleatorios = hr.alocaAleatorio(aulas)
+    ds.geraPlanilhas(aulas, horariosAleatorios, "Aleatorio")
+
+    horariosPorTurno = hr.alocaPorTurno(aulas)
+    ds.geraPlanilhas(aulas, horariosPorTurno, "Dedicado")
 
 if __name__ == '__main__':
     main(str(sys.argv[1]))

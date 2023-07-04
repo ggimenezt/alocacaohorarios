@@ -1,0 +1,53 @@
+MATÉRIA,TURMA,PROFESSOR,CH,CURSO,TURNO
+Fundamentos de Programação,a,12,4,CCO,MT
+Arquitetura de Computadores I,a,13,4,CCO,MT
+Matemática Discreta,a,5,4,CCO,MT
+Projeto Integrado,a,16,2,CCO,MT
+Programação Orientada a Objetos,b,9,4,CCO,MT
+Engenharia de Software I,b,1,4,CCO,MT
+Sistemas Operacionais,b,13,4,CCO,MT
+Algoritmos e Estrutura de Dados II,b,18,4,CCO,MT
+Métodos Matemáticos para Análise de Dados,b,9,4,CCO,MT
+Algoritmos em Grafos,b,16,4,CCO,MT
+Análise e Projeto de Algoritmos II,c,14,3,CCO,MT
+Linguagens Formais e Autônomas,c,5,4,CCO,MT
+Engenharia de Software II,c,11,4,CCO,MT
+Computação Orientada a Objetos II,c,10,4,CCO,MT
+Banco de Dados I,c,12,4,CCO,MT
+Redes de Computadores,c,4,4,CCO,MT
+Análise de Investimentos em Informática,c,2,3,CCO,MT
+Processamento Digital de Imagens,d,7,4,CCO,MT
+Gerência de Projeto de Software,d,1,4,CCO,MT
+Interação Humano Computador,d,6,4,CCO,MT
+Desenvolvimento de Sistemas Web,d,15,5,CCO,MT
+Sistemas Distribuidos,d,16,4,CCO,MT
+Fundamentos de Programação,a,11,4,SIN,N
+Projeto Integrado,a,6,2,SIN,N
+Fundamentos de Sistemas de Informação,a,10,4,SIN,N
+Programação Web,b,15,4,SIN,N
+Engenharia de Software II,b,8,4,SIN,N
+Algoritmos e Programação II,b,14,4,SIN,N
+Organização e Arquitetura de Computadores,b,11,4,SIN,N
+Sistemas Inteligentes,c,7,4,SIN,N
+Redes de Computadores,c,4,4,SIN,N
+Linguagens Formais e Autônomas,c,5,4,SIN,N
+Banco de Dados II,c,18,4,SIN,N
+Governança de TI,d,8,4,SIN,N
+Interação Humano Computador,d,6,4,SIN,N
+Desenvolvimento de Aplicações em SI,d,10,5,SIN,N
+Inteligência de Negócios,d,8,4,SIN,N
+Auditoria e Segurança de Sistemas de Informação,d,4,3,SIN,N
+Organização e Métodos,d,2,3,SIN,N
+Fundamentos de Programação (EMT),a,3,4,OC,MT
+Fundamentos de Programação (EME),a,3,4,OC,MT
+Fundamentos de Programação (EBP/ECT),a,3,4,OC,MT
+Fundamentos de Programação (MBA),a,11,4,OC,MT
+Fundamentos de Programação (EMA/EEN),a,3,4,OC,MT
+Metaheurísticas para Problemas de Otimização,b,2,4,OPT,MT
+Redes Complexas,b,1,4,OPT,MT
+Cloud Computing,c,11,4,OPT,MT
+Tópicos em Ciência de Dados,b,7,4,OPT,MT
+Design Patterns,b,14,4,POS,MT
+Visualização da Informação,e,13,4,POS,MT
+VIsão Computacional,c,12,4,POS,MT
+Robótica,c,6,4,POS,MT
