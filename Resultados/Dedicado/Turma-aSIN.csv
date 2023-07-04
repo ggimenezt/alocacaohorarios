@@ -9,8 +9,8 @@ Horários,Segunda,Terça,Quarta,Quinta,Sexta
 15h45-16h40,,,,,
 16h40-17h35,,,,,
 17h35-18h30,,,,,
-19h00-19h50,Fundamentos de Sistemas de Informação.2,Fundamentos de Sistemas de Informação.1,Fundamentos de Programação.1,,
-19h50-20h40,Fundamentos de Sistemas de Informação.2,Fundamentos de Sistemas de Informação.1,Fundamentos de Programação.1,,
-21h00-21h50,Projeto Integrado,,,Fundamentos de Programação.2,
-21h50-22h40,Projeto Integrado,,,Fundamentos de Programação.2,
+19h00-19h50,,Fundamentos de Sistemas de Informação.2,Fundamentos de Sistemas de Informação.1,,Projeto Integrado
+19h50-20h40,,Fundamentos de Sistemas de Informação.2,Fundamentos de Sistemas de Informação.1,,Projeto Integrado
+21h00-21h50,,,Fundamentos de Programação.2,Fundamentos de Programação.1,
+21h50-22h40,,,Fundamentos de Programação.2,Fundamentos de Programação.1,
 22h40-23h30,,,,,

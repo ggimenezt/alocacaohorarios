@@ -1,13 +1,13 @@
 Horários,Segunda,Terça,Quarta,Quinta,Sexta
 07h00-07h55,,,,,
-07h55-08h50,,Fundamentos de Programação.1,,,Arquitetura de Computadores I.2
-08h50-09h45,,Fundamentos de Programação.1,,,Arquitetura de Computadores I.2
-10h10-11h05,,Projeto Integrado,,Fundamentos de Programação.2,Matemática Discreta.1
-11h05-12h00,,Projeto Integrado,,Fundamentos de Programação.2,Matemática Discreta.1
+07h55-08h50,Projeto Integrado,,Matemática Discreta.1,Fundamentos de Programação.2,Arquitetura de Computadores I.1
+08h50-09h45,Projeto Integrado,,Matemática Discreta.1,Fundamentos de Programação.2,Arquitetura de Computadores I.1
+10h10-11h05,,,,Arquitetura de Computadores I.2,Fundamentos de Programação.1
+11h05-12h00,,,,Arquitetura de Computadores I.2,Fundamentos de Programação.1
 13h30-14h25,,,,,
 14h25-15h20,,,,,
-15h45-16h40,Matemática Discreta.2,Arquitetura de Computadores I.1,,,
-16h40-17h35,Matemática Discreta.2,Arquitetura de Computadores I.1,,,
+15h45-16h40,Matemática Discreta.2,,,,
+16h40-17h35,Matemática Discreta.2,,,,
 17h35-18h30,,,,,
 19h00-19h50,,,,,
 19h50-20h40,,,,,

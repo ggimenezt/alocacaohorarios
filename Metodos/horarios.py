@@ -78,7 +78,8 @@ def alocaSequencial(aulas):
             for cor in dict_ch[turno].keys():
                 if str(ch) in dict_ch[turno][cor] and dict_horarios[cor] == '':
                     if ch == 3:
-                        horas_disponiveis[turno][2].remove(horas_disponiveis[turno][3][0])
+                        if(horas_disponiveis[turno][3][0] in horas_disponiveis[turno][2]):
+                            horas_disponiveis[turno][2].remove(horas_disponiveis[turno][3][0])
                         dict_horarios[cor] = horas_disponiveis[turno][3].pop(0)
                     else:
                         if horas_disponiveis[turno][2][0] in horas_disponiveis[turno][3]:
@@ -96,7 +97,8 @@ def alocaAleatorio(aulas):
                 if str(ch) in dict_ch[turno][cor] and dict_horarios[cor] == '':
                     if ch == 3:
                         x = random.randint(0, len(horas_disponiveis[turno][3])-1)
-                        horas_disponiveis[turno][2].remove(horas_disponiveis[turno][3][x])
+                        if(horas_disponiveis[turno][3][x] in horas_disponiveis[turno][2]):
+                            horas_disponiveis[turno][2].remove(horas_disponiveis[turno][3][x])
                         dict_horarios[cor] = horas_disponiveis[turno][3].pop(x)
                     else:
                         x = random.randint(0, len(horas_disponiveis[turno][2])-1)
@@ -120,7 +122,8 @@ def alocaPorTurno(aulas):
             for ch in [3, 2]:
                 if str(ch) in dict_ch[turno][cor] and dict_horarios[cor] == '':
                     if ch == 3:
-                        horas_disponiveis[turno][2].remove(horas_disponiveis[turno][3][0])
+                        if(horas_disponiveis[turno][3][0] in horas_disponiveis[turno][2]):
+                            horas_disponiveis[turno][2].remove(horas_disponiveis[turno][3][0])
                         dict_horarios[cor] = horas_disponiveis[turno][3].pop(0)
                     else:
                         if horas_disponiveis[turno][2][0] in horas_disponiveis[turno][3]:

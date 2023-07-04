@@ -12,7 +12,6 @@ Danubia Pereira Borges - 2019018489
 Grafos - Programa com funções básicas para práticas de algoritmos em grafos.
 Classe principal - desenvolvido em Python 3.10.11
 ===================================================="""
-
 import sys
 from Inicializacao import (dataSet as ds)
 from Metodos import (coloracao as cl)
@@ -20,7 +19,7 @@ from Metodos import (horarios as hr)
 
 def main(instancia):
     grafo, aulas = ds.extraiGrafo(instancia)
-    mapaDeCores = cl.colore_grafo(grafo) 
+    mapaDeCores = cl.colore_grafo(grafo)
     aulas = ds.atribuiCores(mapaDeCores, aulas)
     
     horariosSequenciais = hr.alocaSequencial(aulas)
