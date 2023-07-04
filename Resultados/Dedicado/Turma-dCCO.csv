@@ -1,14 +1,14 @@
 Horários,Segunda,Terça,Quarta,Quinta,Sexta
 07h00-07h55,,,,,
-07h55-08h50,,Gerência de Projeto de Software.1,Sistemas Distribuidos.1,Desenvolvimento de Sistemas Web.1,
-08h50-09h45,,Gerência de Projeto de Software.1,Sistemas Distribuidos.1,Desenvolvimento de Sistemas Web.1,
-10h10-11h05,Processamento Digital de Imagens.2,Gerência de Projeto de Software.2,Sistemas Distribuidos.2,Interação Humano Computador.1,
-11h05-12h00,Processamento Digital de Imagens.2,Gerência de Projeto de Software.2,Sistemas Distribuidos.2,Interação Humano Computador.1,
+07h55-08h50,,Sistemas Distribuidos.1,Desenvolvimento de Sistemas Web.2,,Processamento Digital de Imagens.2
+08h50-09h45,,Sistemas Distribuidos.1,Desenvolvimento de Sistemas Web.2,,Processamento Digital de Imagens.2
+10h10-11h05,Desenvolvimento de Sistemas Web.1,Gerência de Projeto de Software.1,Desenvolvimento de Sistemas Web.2,Sistemas Distribuidos.2,Gerência de Projeto de Software.2
+11h05-12h00,Desenvolvimento de Sistemas Web.1,Gerência de Projeto de Software.1,Interação Humano Computador.1,Sistemas Distribuidos.2,Gerência de Projeto de Software.2
 13h30-14h25,,,,,
 14h25-15h20,,,,,
-15h45-16h40,Interação Humano Computador.2,Desenvolvimento de Sistemas Web.2,Processamento Digital de Imagens.1,,
-16h40-17h35,Interação Humano Computador.2,Desenvolvimento de Sistemas Web.2,Processamento Digital de Imagens.1,,
-17h35-18h30,,Desenvolvimento de Sistemas Web.2,,,
+15h45-16h40,Interação Humano Computador.2,Processamento Digital de Imagens.1,,,
+16h40-17h35,Interação Humano Computador.2,Processamento Digital de Imagens.1,,,
+17h35-18h30,,,,,
 19h00-19h50,,,,,
 19h50-20h40,,,,,
 21h00-21h50,,,,,

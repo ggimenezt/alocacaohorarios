@@ -49,11 +49,6 @@ def extraiGrafo(instancia):
                 grafo[i][j+i+1] = 1
                 grafo[j+i+1][i] = 1
 
-    #print(aulas[69, :])
-    #print(aulas[87, :])
-    #print(grafo[69][87])
-    #print(grafo[87][69])
-
     return grafo, aulas
 
 def atribuiCores(mapaDeCores, aulas):

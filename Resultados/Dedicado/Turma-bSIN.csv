@@ -9,8 +9,8 @@ Horários,Segunda,Terça,Quarta,Quinta,Sexta
 15h45-16h40,,,,,
 16h40-17h35,,,,,
 17h35-18h30,,,,,
-19h00-19h50,Engenharia de Software II.1,,Programação Web.1,Algoritmos e Programação II.2,Programação Web.2
-19h50-20h40,Engenharia de Software II.1,,Programação Web.1,Algoritmos e Programação II.2,Programação Web.2
-21h00-21h50,,Algoritmos e Programação II.1,Engenharia de Software II.2,Organização e Arquitetura de Computadores.1,Organização e Arquitetura de Computadores.2
-21h50-22h40,,Algoritmos e Programação II.1,Engenharia de Software II.2,Organização e Arquitetura de Computadores.1,Organização e Arquitetura de Computadores.2
+19h00-19h50,Programação Web.1,Organização e Arquitetura de Computadores.2,Engenharia de Software II.1,Algoritmos e Programação II.2,
+19h50-20h40,Programação Web.1,Organização e Arquitetura de Computadores.2,Engenharia de Software II.1,Algoritmos e Programação II.2,
+21h00-21h50,Organização e Arquitetura de Computadores.1,Algoritmos e Programação II.1,,Engenharia de Software II.2,Programação Web.2
+21h50-22h40,Organização e Arquitetura de Computadores.1,Algoritmos e Programação II.1,,Engenharia de Software II.2,Programação Web.2
 22h40-23h30,,,,,

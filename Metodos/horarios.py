@@ -1,5 +1,3 @@
-import pandas as pd
-import numpy as np
 import random
 
 # função para listar os possíveis horários a serem distribuidos para as cores
