@@ -1,0 +1,48 @@
+MATÉRIA,TURMA,PROFESSOR,CH,CURSO,TURNO
+Fundamentos de Programação,a,12,4,CCO,MT
+Programação Lógica e Funcional,a,7,4,CCO,MT
+Arquitetura de Computadores II,a,13,4,CCO,MT
+Algoritmos e Estruturas de Dados I,a,6,4,CCO,MT
+Modelagem Computacional,a,5,4,CCO,MT
+Organização e Arquitetura de Computadores I,a2013,13,4,CCO,MT
+Economia da Informação,a2013,2,3,CCO,MT
+Analise e Projeto de Algoritmos I,b,14,4,CCO,MT
+Sistemas Operacionais,b,11,5,CCO,MT
+Engenharia de Software I,b,8,5,CCO,MT
+Computação Orientada a Objetos I,b,9,4,CCO,MT
+Paradigmas de Programação,c,7,4,CCO,MT
+Compiladores,c,5,4,CCO,MT
+Inteligência Artificial,c,3,4,CCO,MT
+Computação Gráfica,c,6,3,CCO,MT
+Banco de Dados II,c,18,4,CCO,MT
+Adm. e Gerência de Redes de Computadores,c,4,3,CCO,MT
+Informática e Sociedade,c,2,3,CCO,MT
+Programação Orientada a Objetos,a,9,4,SIN,N
+Engenharia de Software I,a,8,4,SIN,N
+Algoritmos e Programação I,a,14,4,SIN,N
+Matemática Discreta,a,5,4,SIN,N
+Comportamento Organizacional,a2017,2,3,SIN,N
+Organização e Arquitetura de Computadores,a2017,11,4,SIN,N
+Computação Orientada a Objetos II,b,15,4,SIN,N
+Sistemas Operacionais,b,13,5,SIN,N
+Engenharia de Software II,b,10,4,SIN,N
+Banco de Dados I,b,12,4,SIN,N
+Algoritmos e Grafos,b,16,3,SIN,N
+Informática e Sociedade,c,2,3,SIN,N
+Engenharia de Projeto de Software,c,1,4,SIN,N
+Adm. e Gerencia de Redes de Computadores,c,4,3,SIN,N
+Sistemas Distribuidos,c,16,4,SIN,N
+Desenvolvimento de Sistemas na Web,c,9,5,SIN,N
+Fundamento da Programação (EPR/EHD),a,15,4,OC,MT
+Fundamento da Programação (ECI/EAM),a,8,4,OC,MT
+Fundamento da Programação (FBA),a,3,4,OC,MT
+Tópicos Especiais em Engenharia de Software,b,4,4,OPT,MT
+Desenvolvimento de Jogos,b,6,4,OPT,MT
+Maratona de Programação I,c,11,3,OPT,MT
+Tópicos Especiais em Programação,c,5,4,OPT,MT
+Data Mining Aplicado,b,18,4,OPT,MT
+Arquitetura de Software,b,10,4,POS,MT
+Visualização de Informação,b,12,4,POS,MT
+Simuladores,c,3,4,POS,MT
+Sistemas Operacionais,b,4,2,POS,MT
+Tópicos em Engenharia de Software,c,17,4,POS,MT
