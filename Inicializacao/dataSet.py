@@ -46,6 +46,8 @@ def extraiGrafo(instancia):
 
     return grafo, aulas
 
+# função que une o array de aulas com o array de cores formando um único array
+
 
 def atribuiCores(mapaDeCores, aulas):
     cores = []
@@ -57,13 +59,17 @@ def atribuiCores(mapaDeCores, aulas):
 
     return aulas
 
+# função para gerar as planilhas de saídas
+
 
 def geraPlanilhas(aulas, horarios, pasta):
+    # cria lista de turmas
     turmas = []
     for turma in aulas[:, [1, 4]]:
         if turma[0]+turma[1] not in turmas:
             turmas.append(turma[0]+turma[1])
 
+    # cria data frame de horários na semana
     escala_zero = pd.DataFrame({
         'Horários': ['07h00-07h55', '07h55-08h50', '08h50-09h45', '10h10-11h05', '11h05-12h00',
                      '13h30-14h25', '14h25-15h20', '15h45-16h40', '16h40-17h35', '17h35-18h30',
@@ -85,6 +91,7 @@ def geraPlanilhas(aulas, horarios, pasta):
                     '', '', '', '', '']
     })
 
+    # itera em cima da lista de turmas para alimentar o dataframe com o horário de cada turma
     for turma in turmas:
         escala = escala_zero.copy(deep=True)
         for aula in aulas:
@@ -103,7 +110,7 @@ def geraPlanilhas(aulas, horarios, pasta):
         escala_doc = escala_doc.set_index('Horários')
         escala_doc = escala_doc.rename(
             columns={2: 'Segunda', 3: 'Terça', 4: 'Quarta', 5: 'Quinta', 6: 'Sexta'})
-
+        # converte o dataframe da turma para arquivo csv
         escala_doc.to_csv('Resultados/'+pasta+'/Turma-'+turma+'.csv', sep=',')
 
     sugestoes = hr.geraHorarios(aulas, horarios)

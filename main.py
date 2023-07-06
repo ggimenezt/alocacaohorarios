@@ -19,10 +19,12 @@ from Metodos import (horarios as hr)
 
 
 def main(instancia):
+    # extrai grafo, colote e une a lista de aulas com o mapa de cores
     grafo, aulas = ds.extraiGrafo(instancia)
     mapaDeCores = cl.colore_grafo(grafo)
     aulas = ds.atribuiCores(mapaDeCores, aulas)
 
+    # chama a função de estrate
     horariosSequenciais = hr.alocaSequencial(aulas)
     ds.geraPlanilhas(aulas, horariosSequenciais, "Sequencial")
 

@@ -2,8 +2,11 @@ import random
 
 # função para listar os possíveis horários a serem distribuidos para as cores
 
+# cria as estruturas necessárias para as estratégias de elocações funcionarem
+
 
 def estruturaAlocacoes(aulas):
+    # cria lista de horários disponiveis, separadas por turnos e carga horária
     horas_disponiveis = {
         "MT": {
             2: [],
@@ -15,6 +18,7 @@ def estruturaAlocacoes(aulas):
         }
     }
 
+    # loop que alimenta a lista de horários disponiveis
     dia = 2
     hora = 2
     while (dia < 7):
